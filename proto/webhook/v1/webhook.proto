@@ -1,0 +1,168 @@
+syntax = "proto3";
+package webhook.v1;
+
+import "common/v1/response.proto";
+import "google/api/annotations.proto";
+import "google/api/httpbody.proto";
+import "google/protobuf/empty.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "provider/v1/idnow.proto";
+
+option go_package = "gitlab.com/micoboteam/backend/core/domain/webhook/v1;webhook";
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Webhook Service";
+    version: "1.0";
+    description: "Provides webhook endpoint for external services.";
+    contact: {
+      name: "Elements Core";
+      url: "https://gitlab.com/micoboteam/backend/core";
+      email: "support@micobo.com";
+    };
+  };
+
+  schemes: HTTPS;
+  schemes: HTTP;
+
+  consumes: "application/json";
+  produces: "application/json";
+
+  responses: {
+    key: "400",
+    value: {
+      description: "Bad request.",
+      schema: {
+        json_schema: {ref: ".common.v1.ErrorResponse"}
+      }
+    }
+  }
+  responses: {
+    key: "403";
+    value: {
+      description: "Unauthorized.",
+      schema: {
+        json_schema: {ref: ".google.protobuf.Empty"}
+      }
+    }
+  }
+  responses: {
+    key: "404";
+    value: {
+      description: "Not found.",
+      schema: {
+        json_schema: {ref: ".google.protobuf.Empty"}
+      }
+    }
+  }
+  responses: {
+    key: "500";
+    value: {
+      description: "Server error.",
+      headers: {
+        key: "X-Correlation-Id"
+        value: {
+          description: "Unique event identifier for server requests"
+          type: "string"
+          format: "uuid"
+          default: "\"2438ac3c-37eb-4902-adef-ed16b4431030\""
+          pattern: "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$"
+        }
+      };
+      schema: {
+        json_schema: {ref: ".google.protobuf.Empty"}
+      }
+    }
+  }
+};
+
+enum HookTopic {
+  HOOK_TOPIC_UNSPECIFIED = 0;
+
+  // IDnow
+  HOOK_TOPIC_IDNOW_SUCCESS = 1;
+  HOOK_TOPIC_IDNOW_REVIEW_PENDING = 2;
+  HOOK_TOPIC_IDNOW_FRAUD_SUSPICION_PENDING = 3;
+  HOOK_TOPIC_IDNOW_SUCCESS_DATA_CHANGED = 4;
+  HOOK_TOPIC_IDNOW_FRAUD_SUSPICION_CONFIRMED = 5;
+  HOOK_TOPIC_IDNOW_CANCELED = 6;
+  HOOK_TOPIC_IDNOW_ABORTED = 7;
+}
+
+service WebhookService {
+  rpc IDnowSuccess(IDnowSuccessRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_success"
+      body: "request"
+    };
+  }
+  rpc IDnowReviewPending(IDnowReviewPendingRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_review_pending"
+      body: "request"
+    };
+  }
+  rpc IDnowFraudSuspicionPending(IDnowFraudSuspicionPendingRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_suspicion_pending"
+      body: "request"
+    };
+  }
+  rpc IDnowSuccessDataChanged(IDnowSuccessDataChangedRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_data_changed"
+      body: "request"
+    };
+  }
+  rpc IDnowFraudSuspicionConfirmed(IDnowFraudSuspicionConfirmedRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_fraud_suspicion_confirmed"
+      body: "request"
+    };
+  }
+  rpc IDnowCanceled(IDnowCanceledRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_canceled"
+      body: "request"
+    };
+  }
+  rpc IDnowAborted(IDnowAbortedRequest) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      post: "/{tenant_name}/webhook/idnow_aborted"
+      body: "request"
+    };
+  }
+}
+
+message IDnowAbortedRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowAbortedPayload request = 2;
+}
+
+message IDnowCanceledRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowCanceledPayload request = 2;
+}
+
+message IDnowFraudSuspicionConfirmedRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowFraudSuspicionConfirmedPayload request = 2;
+}
+
+message IDnowSuccessDataChangedRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowSuccessDataChangedPayload request = 2;
+}
+message IDnowFraudSuspicionPendingRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowFraudSuspicionPendingPayload request = 2;
+}
+
+message IDnowReviewPendingRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowReviewPendingPayload request = 2;
+}
+
+message IDnowSuccessRequest {
+  string tenant_name = 1;
+  provider.v1.IDnowSuccessPayload request = 2;
+}

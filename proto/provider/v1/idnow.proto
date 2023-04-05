@@ -1,0 +1,888 @@
+syntax = "proto3";
+package provider.v1;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+message IDnowSuccessPayload {
+  message Identificationprocess {
+    string result = 1;
+    string companyid = 2;
+    string filename = 3;
+    google.protobuf.Timestamp identificationtime = 4;
+    string id = 5;
+    string href = 6;
+    string type = 7;
+    string transactionnumber = 8;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    google.protobuf.Any mobilephone = 1;
+    google.protobuf.Any email = 2;
+  }
+
+  message Birthday {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Address {}
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Nationality {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Gender {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identlanguage {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Birthname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Lastname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Birthday birthday = 1;
+    Firstname firstname = 2;
+    Address address = 3;
+    Birthplace birthplace = 4;
+    Nationality nationality = 5;
+    Gender gender = 6;
+    Identlanguage identlanguage = 7;
+    Birthname birthname = 8;
+    Lastname lastname = 9;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Number {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Issuedby {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Dateissued {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Validuntil {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country country = 1;
+    Number number = 2;
+    Issuedby issuedby = 3;
+    Dateissued dateissued = 4;
+    Type type = 5;
+    Validuntil validuntil = 6;
+    repeated google.protobuf.Any driverlicenses = 7;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+    string idfrontside = 3;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowReviewPendingPayload {
+  message Identificationprocess {
+    string result = 1;
+    string companyid = 2;
+    string filename = 3;
+    google.protobuf.Timestamp identificationtime = 4;
+    string id = 5;
+    string href = 6;
+    string type = 7;
+    string transactionnumber = 8;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    string mobilephone = 1;
+    string email = 2;
+  }
+
+  message Birthday {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Zipcode {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message City {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Street {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Streetnumber {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Address {
+    Zipcode zipcode = 1;
+    Country country = 2;
+    City city = 3;
+    Street street = 4;
+    Streetnumber streetnumber = 5;
+  }
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Nationality {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Gender {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identlanguage {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Lastname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Birthday birthday = 1;
+    Firstname firstname = 2;
+    Address address = 3;
+    Birthplace birthplace = 4;
+    Nationality nationality = 5;
+    Gender gender = 6;
+    Identlanguage identlanguage = 7;
+    Lastname lastname = 8;
+  }
+
+  message Country1 {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Number {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Validuntil {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country1 country = 1;
+    Number number = 2;
+    Type type = 3;
+    Validuntil validuntil = 4;
+    repeated google.protobuf.Any driverlicenses = 5;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+    string idbackside = 3;
+    string idfrontside = 4;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowFraudSuspicionPendingPayload {
+  message Identificationprocess {
+    string result = 1;
+    string companyid = 2;
+    string filename = 3;
+    google.protobuf.Timestamp identificationtime = 4;
+    string id = 5;
+    string href = 6;
+    string type = 7;
+    string transactionnumber = 8;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    google.protobuf.Any mobilephone = 1;
+    google.protobuf.Any email = 2;
+  }
+
+  message Address {}
+
+  message Userdata {
+    Address address = 1;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country country = 1;
+    Type type = 2;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+    string idbackside = 3;
+    string idfrontside = 4;
+    string userface = 5;
+    string livenessleft = 6;
+    string livenessright = 7;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowSuccessDataChangedPayload {
+  message Identificationprocess {
+    string result = 1;
+    string companyid = 2;
+    string filename = 3;
+    google.protobuf.Timestamp identificationtime = 4;
+    string id = 5;
+    string href = 6;
+    string type = 7;
+    string transactionnumber = 8;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    string mobilephone = 1;
+    string email = 2;
+  }
+
+  message Birthday {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Zipcode {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message City {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Street {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Streetnumber {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Address {
+    Zipcode zipcode = 1;
+    Country country = 2;
+    City city = 3;
+    Street street = 4;
+    Streetnumber streetnumber = 5;
+  }
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Nationality {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Gender {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identlanguage {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Lastname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Birthday birthday = 1;
+    Firstname firstname = 2;
+    Address address = 3;
+    Birthplace birthplace = 4;
+    Nationality nationality = 5;
+    Gender gender = 6;
+    Identlanguage identlanguage = 7;
+    Lastname lastname = 8;
+  }
+
+  message Country1 {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Number {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Validuntil {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country1 country = 1;
+    Number number = 2;
+    Type type = 3;
+    Validuntil validuntil = 4;
+    repeated google.protobuf.Any driverlicenses = 5;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+    string idbackside = 3;
+    string idfrontside = 4;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowFraudSuspicionConfirmedPayload {
+  message Identificationprocess {
+    string result = 1;
+    string companyid = 2;
+    string filename = 3;
+    google.protobuf.Timestamp identificationtime = 4;
+    string id = 5;
+    string href = 6;
+    string type = 7;
+    string transactionnumber = 8;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    string mobilephone = 1;
+    string email = 2;
+  }
+
+  message Birthday {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Zipcode {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message City {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Street {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Streetnumber {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Address {
+    Zipcode zipcode = 1;
+    Country country = 2;
+    City city = 3;
+    Street street = 4;
+    Streetnumber streetnumber = 5;
+  }
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Nationality {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Gender {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identlanguage {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Lastname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Birthday birthday = 1;
+    Firstname firstname = 2;
+    Address address = 3;
+    Birthplace birthplace = 4;
+    Nationality nationality = 5;
+    Gender gender = 6;
+    Identlanguage identlanguage = 7;
+    Lastname lastname = 8;
+  }
+
+  message Country1 {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Number {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Validuntil {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country1 country = 1;
+    Number number = 2;
+    Type type = 3;
+    Validuntil validuntil = 4;
+    repeated google.protobuf.Any driverlicenses = 5;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+    string idbackside = 3;
+    string idfrontside = 4;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowCanceledPayload {
+  message Identificationprocess {
+    string result = 1;
+    string reason = 2;
+    string companyid = 3;
+    string filename = 4;
+    google.protobuf.Timestamp identificationtime = 5;
+    string id = 6;
+    string href = 7;
+    string type = 8;
+    string transactionnumber = 9;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    string mobilephone = 1;
+    string email = 2;
+  }
+
+  message Birthday {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Zipcode {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message City {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Street {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Streetnumber {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Address {
+    Zipcode zipcode = 1;
+    Country country = 2;
+    City city = 3;
+    Street street = 4;
+    Streetnumber streetnumber = 5;
+  }
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+    string original = 3;
+  }
+
+  message Nationality {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Gender {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identlanguage {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Lastname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Birthday birthday = 1;
+    Firstname firstname = 2;
+    Address address = 3;
+    Birthplace birthplace = 4;
+    Nationality nationality = 5;
+    Gender gender = 6;
+    Identlanguage identlanguage = 7;
+    Lastname lastname = 8;
+  }
+
+  message Country1 {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Number {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Validuntil {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country1 country = 1;
+    Number number = 2;
+    Type type = 3;
+    Validuntil validuntil = 4;
+    repeated google.protobuf.Any driverlicenses = 5;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}
+
+message IDnowAbortedPayload {
+  message Identificationprocess {
+    string result = 1;
+    string reason = 2;
+    string companyid = 3;
+    string filename = 4;
+    google.protobuf.Timestamp identificationtime = 5;
+    string id = 6;
+    string href = 7;
+    string type = 8;
+    string transactionnumber = 9;
+  }
+
+  message Customdata {
+    google.protobuf.Any custom3 = 1;
+    google.protobuf.Any custom4 = 2;
+    google.protobuf.Any custom1 = 3;
+    google.protobuf.Any custom2 = 4;
+    google.protobuf.Any custom5 = 5;
+  }
+
+  message Contactdata {
+    google.protobuf.Any mobilephone = 1;
+    google.protobuf.Any email = 2;
+  }
+
+  message Firstname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Address {}
+
+  message Birthplace {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Birthname {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Userdata {
+    Firstname firstname = 1;
+    Address address = 2;
+    Birthplace birthplace = 3;
+    Birthname birthname = 4;
+  }
+
+  message Country {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Issuedby {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Type {
+    string status = 1;
+    string value = 2;
+  }
+
+  message Identificationdocument {
+    Country country = 1;
+    Issuedby issuedby = 2;
+    Type type = 3;
+  }
+
+  message Attachments {
+    string pdf = 1;
+    string xml = 2;
+  }
+
+  Identificationprocess identificationprocess = 1;
+  Customdata customdata = 2;
+  Contactdata contactdata = 3;
+  Userdata userdata = 4;
+  Identificationdocument identificationdocument = 5;
+  Attachments attachments = 6;
+}

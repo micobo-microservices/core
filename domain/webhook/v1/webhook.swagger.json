@@ -1,0 +1,2628 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Webhook Service",
+    "description": "Provides webhook endpoint for external services.",
+    "version": "1.0",
+    "contact": {
+      "name": "Elements Core",
+      "url": "https://gitlab.com/micoboteam/backend/core",
+      "email": "support@micobo.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "WebhookService"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/{tenantName}/webhook/idnow_aborted": {
+      "post": {
+        "operationId": "WebhookService_IDnowAborted",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowAbortedPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_canceled": {
+      "post": {
+        "operationId": "WebhookService_IDnowCanceled",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowCanceledPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_data_changed": {
+      "post": {
+        "operationId": "WebhookService_IDnowSuccessDataChanged",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowSuccessDataChangedPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_fraud_suspicion_confirmed": {
+      "post": {
+        "operationId": "WebhookService_IDnowFraudSuspicionConfirmed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_review_pending": {
+      "post": {
+        "operationId": "WebhookService_IDnowReviewPending",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowReviewPendingPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_success": {
+      "post": {
+        "operationId": "WebhookService_IDnowSuccess",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowSuccessPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    },
+    "/{tenantName}/webhook/idnow_suspicion_pending": {
+      "post": {
+        "operationId": "WebhookService_IDnowFraudSuspicionPending",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BoolResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayload"
+            }
+          }
+        ],
+        "tags": [
+          "WebhookService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "IDnowSuccessPayloadDateissued": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "description": "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        }
+      },
+      "additionalProperties": {},
+      "description": "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(\u0026foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\nExample 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\nExample 4: Pack and unpack a message in Go\n\n     foo := \u0026pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := \u0026pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": \u003cstring\u003e,\n      \"lastName\": \u003cstring\u003e\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    },
+    "protobufEmpty": {
+      "type": "object",
+      "description": "service Foo {\n      rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);\n    }",
+      "title": "A generic empty message that you can re-use to avoid defining duplicated\nempty messages in your APIs. A typical example is to use it as the request\nor the response type of an API method. For instance:"
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BoolResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadAddress": {
+      "type": "object"
+    },
+    "v1IDnowAbortedPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadBirthname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "email": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadCountry"
+        },
+        "issuedby": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadIssuedby"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadType"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadIssuedby": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowAbortedPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadBirthplace"
+        },
+        "birthname": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadBirthname"
+        }
+      }
+    },
+    "v1IDnowCanceledPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadAddress": {
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadZipcode"
+        },
+        "country": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadCountry"
+        },
+        "city": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadCity"
+        },
+        "street": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadStreet"
+        },
+        "streetnumber": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadStreetnumber"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadBirthday": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadCity": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadCountry1": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadGender": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadCountry1"
+        },
+        "number": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadNumber"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadType"
+        },
+        "validuntil": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadValiduntil"
+        },
+        "driverlicenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadIdentlanguage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadLastname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadNationality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadNumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadStreet": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadStreetnumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadBirthday"
+        },
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadBirthplace"
+        },
+        "nationality": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadNationality"
+        },
+        "gender": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadGender"
+        },
+        "identlanguage": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentlanguage"
+        },
+        "lastname": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadLastname"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadValiduntil": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowCanceledPayloadZipcode": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadAddress": {
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadZipcode"
+        },
+        "country": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCountry"
+        },
+        "city": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCity"
+        },
+        "street": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadStreet"
+        },
+        "streetnumber": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadStreetnumber"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "idbackside": {
+          "type": "string"
+        },
+        "idfrontside": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadBirthday": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadCity": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadCountry1": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadGender": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCountry1"
+        },
+        "number": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadNumber"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadType"
+        },
+        "validuntil": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadValiduntil"
+        },
+        "driverlicenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadIdentlanguage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadLastname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadNationality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadNumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadStreet": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadStreetnumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadBirthday"
+        },
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadBirthplace"
+        },
+        "nationality": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadNationality"
+        },
+        "gender": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadGender"
+        },
+        "identlanguage": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentlanguage"
+        },
+        "lastname": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadLastname"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadValiduntil": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionConfirmedPayloadZipcode": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadAddress": {
+      "type": "object"
+    },
+    "v1IDnowFraudSuspicionPendingPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "idbackside": {
+          "type": "string"
+        },
+        "idfrontside": {
+          "type": "string"
+        },
+        "userface": {
+          "type": "string"
+        },
+        "livenessleft": {
+          "type": "string"
+        },
+        "livenessright": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "email": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadCountry"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadType"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowFraudSuspicionPendingPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadAddress"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadAddress": {
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadZipcode"
+        },
+        "country": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCountry"
+        },
+        "city": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCity"
+        },
+        "street": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadStreet"
+        },
+        "streetnumber": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadStreetnumber"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "idbackside": {
+          "type": "string"
+        },
+        "idfrontside": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadBirthday": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadCity": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadCountry1": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadGender": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCountry1"
+        },
+        "number": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadNumber"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadType"
+        },
+        "validuntil": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadValiduntil"
+        },
+        "driverlicenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadIdentlanguage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadLastname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadNationality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadNumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadStreet": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadStreetnumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadBirthday"
+        },
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadBirthplace"
+        },
+        "nationality": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadNationality"
+        },
+        "gender": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadGender"
+        },
+        "identlanguage": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentlanguage"
+        },
+        "lastname": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadLastname"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadValiduntil": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowReviewPendingPayloadZipcode": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadAddress": {
+      "type": "object",
+      "properties": {
+        "zipcode": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadZipcode"
+        },
+        "country": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCountry"
+        },
+        "city": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCity"
+        },
+        "street": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadStreet"
+        },
+        "streetnumber": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadStreetnumber"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "idbackside": {
+          "type": "string"
+        },
+        "idfrontside": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadBirthday": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadCity": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadCountry1": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadGender": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCountry1"
+        },
+        "number": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadNumber"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadType"
+        },
+        "validuntil": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadValiduntil"
+        },
+        "driverlicenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadIdentlanguage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadLastname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadNationality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadNumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadStreet": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadStreetnumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadBirthday"
+        },
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadBirthplace"
+        },
+        "nationality": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadNationality"
+        },
+        "gender": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadGender"
+        },
+        "identlanguage": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentlanguage"
+        },
+        "lastname": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadLastname"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadValiduntil": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessDataChangedPayloadZipcode": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadAttachments"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadAddress": {
+      "type": "object"
+    },
+    "v1IDnowSuccessPayloadAttachments": {
+      "type": "object",
+      "properties": {
+        "pdf": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "idfrontside": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadBirthday": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadBirthname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadBirthplace": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadContactdata": {
+      "type": "object",
+      "properties": {
+        "mobilephone": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "email": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadCountry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadCustomdata": {
+      "type": "object",
+      "properties": {
+        "custom3": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom4": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom1": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom2": {
+          "$ref": "#/definitions/protobufAny"
+        },
+        "custom5": {
+          "$ref": "#/definitions/protobufAny"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadFirstname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadGender": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadIdentificationdocument": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadCountry"
+        },
+        "number": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadNumber"
+        },
+        "issuedby": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIssuedby"
+        },
+        "dateissued": {
+          "$ref": "#/definitions/IDnowSuccessPayloadDateissued"
+        },
+        "type": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadType"
+        },
+        "validuntil": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadValiduntil"
+        },
+        "driverlicenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadIdentificationprocess": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "companyid": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "identificationtime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "transactionnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadIdentlanguage": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadIssuedby": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadLastname": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadNationality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadNumber": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadType": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadUserdata": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadBirthday"
+        },
+        "firstname": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadFirstname"
+        },
+        "address": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadAddress"
+        },
+        "birthplace": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadBirthplace"
+        },
+        "nationality": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadNationality"
+        },
+        "gender": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadGender"
+        },
+        "identlanguage": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentlanguage"
+        },
+        "birthname": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadBirthname"
+        },
+        "lastname": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadLastname"
+        }
+      }
+    },
+    "v1IDnowSuccessPayloadValiduntil": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
