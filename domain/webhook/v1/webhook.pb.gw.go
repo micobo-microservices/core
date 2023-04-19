@@ -521,7 +521,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccess", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_success"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccess", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/success"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -546,7 +546,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowReviewPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_review_pending"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowReviewPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/review_pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -571,7 +571,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_suspicion_pending"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/suspicion_pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -596,7 +596,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccessDataChanged", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_data_changed"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccessDataChanged", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/data_changed"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -621,7 +621,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionConfirmed", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_fraud_suspicion_confirmed"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionConfirmed", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/fraud_suspicion_confirmed"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -646,7 +646,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowCanceled", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_canceled"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowCanceled", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/canceled"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -671,7 +671,7 @@ func RegisterWebhookServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowAborted", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_aborted"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowAborted", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/aborted"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -735,7 +735,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccess", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_success"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccess", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/success"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -757,7 +757,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowReviewPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_review_pending"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowReviewPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/review_pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -779,7 +779,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_suspicion_pending"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionPending", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/suspicion_pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -801,7 +801,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccessDataChanged", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_data_changed"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowSuccessDataChanged", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/data_changed"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -823,7 +823,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionConfirmed", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_fraud_suspicion_confirmed"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowFraudSuspicionConfirmed", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/fraud_suspicion_confirmed"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -845,7 +845,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowCanceled", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_canceled"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowCanceled", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/canceled"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -867,7 +867,7 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowAborted", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow_aborted"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/webhook.v1.WebhookService/IDnowAborted", runtime.WithHTTPPathPattern("/{tenant_name}/webhook/idnow/aborted"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -887,19 +887,19 @@ func RegisterWebhookServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_WebhookService_IDnowSuccess_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_success"}, ""))
+	pattern_WebhookService_IDnowSuccess_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "success"}, ""))
 
-	pattern_WebhookService_IDnowReviewPending_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_review_pending"}, ""))
+	pattern_WebhookService_IDnowReviewPending_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "review_pending"}, ""))
 
-	pattern_WebhookService_IDnowFraudSuspicionPending_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_suspicion_pending"}, ""))
+	pattern_WebhookService_IDnowFraudSuspicionPending_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "suspicion_pending"}, ""))
 
-	pattern_WebhookService_IDnowSuccessDataChanged_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_data_changed"}, ""))
+	pattern_WebhookService_IDnowSuccessDataChanged_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "data_changed"}, ""))
 
-	pattern_WebhookService_IDnowFraudSuspicionConfirmed_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_fraud_suspicion_confirmed"}, ""))
+	pattern_WebhookService_IDnowFraudSuspicionConfirmed_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "fraud_suspicion_confirmed"}, ""))
 
-	pattern_WebhookService_IDnowCanceled_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_canceled"}, ""))
+	pattern_WebhookService_IDnowCanceled_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "canceled"}, ""))
 
-	pattern_WebhookService_IDnowAborted_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2}, []string{"tenant_name", "webhook", "idnow_aborted"}, ""))
+	pattern_WebhookService_IDnowAborted_0 = runtime.MustPattern(runtime.NewPattern(1, []int{1, 0, 4, 1, 5, 0, 2, 1, 2, 2, 2, 3}, []string{"tenant_name", "webhook", "idnow", "aborted"}, ""))
 )
 
 var (

@@ -1,8 +1,8 @@
 {
   "name": "micobo-core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
-  "repository": "git@gitlab.com:micoboteam/backend/core.git",
+  "repository": "git@github.com:micobo/core.git",
   "author": "Amaury Diaz <ad@micobo.com>",
   "license": "MIT"
 }

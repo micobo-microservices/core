@@ -1,4 +1,4 @@
-module gitlab.com/micoboteam/backend/core
+module github.com/micobo/core
 
 go 1.19
 

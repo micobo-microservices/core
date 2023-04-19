@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Webhook Service",
-    "description": "Provides webhook endpoint for external services.",
+    "title": "micobo Core Service",
+    "description": "Provides webhook endpoint for services.",
     "version": "1.0",
     "contact": {
       "name": "Elements Core",
@@ -26,7 +26,7 @@
     "application/json"
   ],
   "paths": {
-    "/{tenantName}/webhook/idnow_aborted": {
+    "/{tenantName}/webhook/idnow/aborted": {
       "post": {
         "operationId": "WebhookService_IDnowAborted",
         "responses": {
@@ -88,7 +88,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_canceled": {
+    "/{tenantName}/webhook/idnow/canceled": {
       "post": {
         "operationId": "WebhookService_IDnowCanceled",
         "responses": {
@@ -150,7 +150,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_data_changed": {
+    "/{tenantName}/webhook/idnow/data_changed": {
       "post": {
         "operationId": "WebhookService_IDnowSuccessDataChanged",
         "responses": {
@@ -212,7 +212,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_fraud_suspicion_confirmed": {
+    "/{tenantName}/webhook/idnow/fraud_suspicion_confirmed": {
       "post": {
         "operationId": "WebhookService_IDnowFraudSuspicionConfirmed",
         "responses": {
@@ -274,7 +274,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_review_pending": {
+    "/{tenantName}/webhook/idnow/review_pending": {
       "post": {
         "operationId": "WebhookService_IDnowReviewPending",
         "responses": {
@@ -336,7 +336,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_success": {
+    "/{tenantName}/webhook/idnow/success": {
       "post": {
         "operationId": "WebhookService_IDnowSuccess",
         "responses": {
@@ -398,7 +398,7 @@
         ]
       }
     },
-    "/{tenantName}/webhook/idnow_suspicion_pending": {
+    "/{tenantName}/webhook/idnow/suspicion_pending": {
       "post": {
         "operationId": "WebhookService_IDnowFraudSuspicionPending",
         "responses": {
@@ -502,7 +502,6 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -908,7 +907,6 @@
         "driverlicenses": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -1270,7 +1268,6 @@
         "driverlicenses": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -1786,7 +1783,6 @@
         "driverlicenses": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -2151,7 +2147,6 @@
         "driverlicenses": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -2479,7 +2474,6 @@
         "driverlicenses": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
