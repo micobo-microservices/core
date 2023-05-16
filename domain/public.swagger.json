@@ -12,6 +12,9 @@
   },
   "tags": [
     {
+      "name": "TokenService"
+    },
+    {
       "name": "WebhookService"
     }
   ],
@@ -25,6 +28,74 @@
     "application/json"
   ],
   "paths": {
+    "/{tenantName}/token/transaction/{method}": {
+      "post": {
+        "operationId": "TokenService_ProcessTokenTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProcessTokenTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/v1ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Unauthorized.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "500": {
+            "description": "Server error.",
+            "schema": {
+              "$ref": "#/definitions/protobufEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "method",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1TransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TokenService"
+        ]
+      }
+    },
     "/{tenantName}/webhook/idnow/aborted": {
       "post": {
         "operationId": "WebhookService_IDnowAborted",
@@ -2613,6 +2684,69 @@
           "type": "string"
         },
         "value": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ProcessTokenTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/v1TxResponse"
+        }
+      }
+    },
+    "v1TransactionRequest": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "contractAddress": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        },
+        "useGnosis": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1TxResponse": {
+      "type": "object",
+      "properties": {
+        "accountNonce": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "gasLimit": {
+          "type": "string"
+        },
+        "recipient": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "string"
+        },
+        "v": {
+          "type": "string"
+        },
+        "s": {
+          "type": "string"
+        },
+        "r": {
+          "type": "string"
+        },
+        "hash": {
           "type": "string"
         }
       }
