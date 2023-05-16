@@ -6,7 +6,7 @@ import "google/protobuf/any.proto";
 
 message TransactionRequest {
   string from = 1;
-  string contract_address = 2;
+  string contract_address = 2 [json_name = "contract_address"];
   repeated google.protobuf.Any parameters = 3;
   optional bool use_gnosis = 4 [json_name = "use_gnosis"];
 }

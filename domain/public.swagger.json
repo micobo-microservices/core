@@ -2702,7 +2702,7 @@
         "from": {
           "type": "string"
         },
-        "contractAddress": {
+        "contract_address": {
           "type": "string"
         },
         "parameters": {
