@@ -8,19 +8,6 @@ import "google/protobuf/empty.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 import "provider/v1/idnow.proto";
 
-enum HookTopic {
-  HOOK_TOPIC_UNSPECIFIED = 0;
-
-  // IDnow
-  HOOK_TOPIC_IDNOW_SUCCESS = 1;
-  HOOK_TOPIC_IDNOW_REVIEW_PENDING = 2;
-  HOOK_TOPIC_IDNOW_FRAUD_SUSPICION_PENDING = 3;
-  HOOK_TOPIC_IDNOW_SUCCESS_DATA_CHANGED = 4;
-  HOOK_TOPIC_IDNOW_FRAUD_SUSPICION_CONFIRMED = 5;
-  HOOK_TOPIC_IDNOW_CANCELED = 6;
-  HOOK_TOPIC_IDNOW_ABORTED = 7;
-}
-
 service WebhookService {
   rpc IDnowSuccess(IDnowSuccessRequest) returns (common.v1.BoolResponse) {
     option (google.api.http) = {

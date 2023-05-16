@@ -1,13 +1,13 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "micobo Core Service",
-    "description": "Provides webhook endpoint for services.",
+    "title": "micobo Core Services",
+    "description": "Provides micobo platform services API definitions.",
     "version": "1.0",
     "contact": {
-      "name": "Elements Core",
-      "url": "https://gitlab.com/micoboteam/backend/core",
-      "email": "support@micobo.com"
+      "name": "micobo GmbH",
+      "url": "https://github.com/micobo/core",
+      "email": "contact@micobo.com"
     }
   },
   "tags": [
@@ -16,8 +16,7 @@
     }
   ],
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
@@ -79,7 +78,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowAbortedPayload"
+              "$ref": "#/definitions/providerv1IDnowAbortedPayload"
             }
           }
         ],
@@ -141,7 +140,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowCanceledPayload"
+              "$ref": "#/definitions/providerv1IDnowCanceledPayload"
             }
           }
         ],
@@ -203,7 +202,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowSuccessDataChangedPayload"
+              "$ref": "#/definitions/providerv1IDnowSuccessDataChangedPayload"
             }
           }
         ],
@@ -265,7 +264,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayload"
+              "$ref": "#/definitions/providerv1IDnowFraudSuspicionConfirmedPayload"
             }
           }
         ],
@@ -327,7 +326,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowReviewPendingPayload"
+              "$ref": "#/definitions/providerv1IDnowReviewPendingPayload"
             }
           }
         ],
@@ -389,7 +388,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowSuccessPayload"
+              "$ref": "#/definitions/providerv1IDnowSuccessPayload"
             }
           }
         ],
@@ -451,7 +450,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayload"
+              "$ref": "#/definitions/providerv1IDnowFraudSuspicionPendingPayload"
             }
           }
         ],
@@ -489,6 +488,167 @@
       "description": "service Foo {\n      rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);\n    }",
       "title": "A generic empty message that you can re-use to avoid defining duplicated\nempty messages in your APIs. A typical example is to use it as the request\nor the response type of an API method. For instance:"
     },
+    "providerv1IDnowAbortedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowAbortedPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowCanceledPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowCanceledPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowFraudSuspicionConfirmedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowFraudSuspicionPendingPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowReviewPendingPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowReviewPendingPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowSuccessDataChangedPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadAttachments"
+        }
+      }
+    },
+    "providerv1IDnowSuccessPayload": {
+      "type": "object",
+      "properties": {
+        "identificationprocess": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationprocess"
+        },
+        "customdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadCustomdata"
+        },
+        "contactdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadContactdata"
+        },
+        "userdata": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadUserdata"
+        },
+        "identificationdocument": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationdocument"
+        },
+        "attachments": {
+          "$ref": "#/definitions/v1IDnowSuccessPayloadAttachments"
+        }
+      }
+    },
     "rpcStatus": {
       "type": "object",
       "properties": {
@@ -520,29 +680,6 @@
       "properties": {
         "message": {
           "type": "string"
-        }
-      }
-    },
-    "v1IDnowAbortedPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowAbortedPayloadAttachments"
         }
       }
     },
@@ -718,29 +855,6 @@
         },
         "birthname": {
           "$ref": "#/definitions/v1IDnowAbortedPayloadBirthname"
-        }
-      }
-    },
-    "v1IDnowCanceledPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowCanceledPayloadAttachments"
         }
       }
     },
@@ -1073,29 +1187,6 @@
         },
         "value": {
           "type": "string"
-        }
-      }
-    },
-    "v1IDnowFraudSuspicionConfirmedPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionConfirmedPayloadAttachments"
         }
       }
     },
@@ -1434,29 +1525,6 @@
         }
       }
     },
-    "v1IDnowFraudSuspicionPendingPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadAttachments"
-        }
-      }
-    },
     "v1IDnowFraudSuspicionPendingPayloadAddress": {
       "type": "object"
     },
@@ -1585,29 +1653,6 @@
       "properties": {
         "address": {
           "$ref": "#/definitions/v1IDnowFraudSuspicionPendingPayloadAddress"
-        }
-      }
-    },
-    "v1IDnowReviewPendingPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowReviewPendingPayloadAttachments"
         }
       }
     },
@@ -1955,29 +2000,6 @@
         }
       }
     },
-    "v1IDnowSuccessDataChangedPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowSuccessDataChangedPayloadAttachments"
-        }
-      }
-    },
     "v1IDnowSuccessDataChangedPayloadAddress": {
       "type": "object",
       "properties": {
@@ -2313,29 +2335,6 @@
         }
       }
     },
-    "v1IDnowSuccessPayload": {
-      "type": "object",
-      "properties": {
-        "identificationprocess": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationprocess"
-        },
-        "customdata": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadCustomdata"
-        },
-        "contactdata": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadContactdata"
-        },
-        "userdata": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadUserdata"
-        },
-        "identificationdocument": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadIdentificationdocument"
-        },
-        "attachments": {
-          "$ref": "#/definitions/v1IDnowSuccessPayloadAttachments"
-        }
-      }
-    },
     "v1IDnowSuccessPayloadAddress": {
       "type": "object"
     },
@@ -2618,5 +2617,17 @@
         }
       }
     }
-  }
+  },
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ]
 }

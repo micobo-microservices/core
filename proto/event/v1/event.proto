@@ -1,0 +1,46 @@
+syntax = "proto3";
+package event.v1;
+
+import "provider/v1/idnow.proto";
+
+enum Topic {
+  TOPIC_UNSPECIFIED = 0;
+
+  // IDnow
+  TOPIC_IDNOW_SUCCESS = 1;
+  TOPIC_IDNOW_REVIEW_PENDING = 2;
+  TOPIC_IDNOW_FRAUD_SUSPICION_PENDING = 3;
+  TOPIC_IDNOW_SUCCESS_DATA_CHANGED = 4;
+  TOPIC_IDNOW_FRAUD_SUSPICION_CONFIRMED = 5;
+  TOPIC_IDNOW_CANCELED = 6;
+  TOPIC_IDNOW_ABORTED = 7;
+}
+
+message IDnowSuccessPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowSuccessPayload payload = 2;
+}
+message IDnowReviewPendingPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowReviewPendingPayload payload = 2;
+}
+message IDnowFraudSuspicionPendingPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowFraudSuspicionPendingPayload payload = 2;
+}
+message IDnowSuccessDataChangedPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowSuccessDataChangedPayload payload = 2;
+}
+message IDnowFraudSuspicionConfirmedPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowFraudSuspicionConfirmedPayload payload = 2;
+}
+message IDnowCanceledPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowCanceledPayload payload = 2;
+}
+message IDnowAbortedPayload {
+  string tenant_name = 1;
+  provider.v1.IDnowAbortedPayload payload = 2;
+}
