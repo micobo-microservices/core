@@ -8,13 +8,13 @@ message TransactionRequest {
   string from = 1;
   string contract_address = 2;
   repeated google.protobuf.Any parameters = 3;
-  optional bool use_gnosis = 4;
+  optional bool use_gnosis = 4 [json_name = "use_gnosis"];
 }
 
 message TxResponse {
-  string account_nonce = 1;
+  string account_nonce = 1 [json_name = "account_nonce"];
   optional string price = 2;
-  string gas_limit = 3;
+  string gas_limit = 3 [json_name = "gas_limit"];
   optional string recipient = 4;
   optional string amount = 5;
   string payload = 6;

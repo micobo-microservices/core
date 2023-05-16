@@ -2711,7 +2711,7 @@
             "$ref": "#/definitions/protobufAny"
           }
         },
-        "useGnosis": {
+        "use_gnosis": {
           "type": "boolean"
         }
       }
@@ -2719,13 +2719,13 @@
     "v1TxResponse": {
       "type": "object",
       "properties": {
-        "accountNonce": {
+        "account_nonce": {
           "type": "string"
         },
         "price": {
           "type": "string"
         },
-        "gasLimit": {
+        "gas_limit": {
           "type": "string"
         },
         "recipient": {
