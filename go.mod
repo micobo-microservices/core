@@ -1,4 +1,4 @@
-module github.com/micobo/core
+module github.com/micobo-microservices/core
 
 go 1.19
 
